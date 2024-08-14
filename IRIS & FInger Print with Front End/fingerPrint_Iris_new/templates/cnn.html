@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+CNN
+{% endblock %}
+
+{% block content %}
+<style>
+    #b2{
+    background-color:green;
+    }
+
+
+    .img1,.img2{
+    height:450px;
+    width:37%;
+    position:fixed;
+    border:2px solid black;
+    margin-top:50px;
+    }
+   .img2{
+    width:35%;
+    margin-left:-600px;
+   }
+    .first-h2,.second-h2{
+    font-size:30px;
+    }
+
+
+</style>
+
+
+        <h2 class="first-h2" id="first_h2"> Accuracy and Loss Plot Graph for CNN Model</h2>
+      <img class="img2 " id="image1" src="/static/graphs/loss.jpeg"  alt="">
+     <img class="img1" id="image2" src="/static/graphs/accuracy.jpeg"  alt="">
+
+
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "base.html "%}
+{% block title %}FingerPrint&IrisClassification|Home {% endblock %}
+
+
+{% block content %}
+<style>
+    #b1{background-color:green;}
+</style>
+
+       <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+          <div class="row">
+               <div class="col">
+                    <div class="form-group">
+                   <label class="control-label col-sm-6" for="img1">Upload Original FingerPrint:</label>
+                   <div class="col-lg-6">
+                    <input type="file"  accept="image/*" class="form-control" required placeholder="Hours Studied"  name="img1" id="img1"/>
+                   </div>
+                   </div>
+                        <img id="target1" />
+                  </div>
+              <div class="col">
+                 <div class="form-group">
+                <label class="control-label col-sm-6" for="img2">Upload Test FingerPrint :</label>
+                <div class="col-lg-6">
+                <input type="file" class="form-control" required placeholder="Hours Studied"  name="img2" id="img2">
+                </div>
+                </div>
+                   <img id="target2" />
+              </div>
+       </div>
+      <hr>
+         <div class="row">
+               <div class="col">
+                    <div class="form-group">
+                   <label class="control-label col-sm-5" for="img1">Upload Original Iris :</label>
+                   <div class="col-lg-6">
+                    <input type="file"  accept="image/*" class="form-control" required placeholder="Hours Studied"  name="img3" id="img3"/>
+                   </div>
+                   </div>
+                   <img id="target3"/>
+               </div>
+              <div class="col">
+                 <div class="form-group">
+                <label class="control-label col-sm-6" for="img2">Upload Test Iris :</label>
+                <div class="col-lg-6">
+                <input type="file" class="form-control" required placeholder="Hours Studied"  name="img4" id="img4">
+                </div>
+                </div>
+                   <img id="target4" />
+              </div>
+       </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+        <div class="form-group">
+             <div class="col-sm-offset-5 col-sm-5">
+            <button type="submit" class="btn-success predict">Predict</button>
+            </div>
+            </div>
+                </div>
+                <div class="col"></div>
+            </div>
+       </form>
+
+{% endblock %}
+
+
+
+
+
+
+
+

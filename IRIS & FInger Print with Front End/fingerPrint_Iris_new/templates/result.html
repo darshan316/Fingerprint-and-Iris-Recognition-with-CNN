@@ -1,0 +1,98 @@
+{% extends "base.html "%}
+{% block title %}FingerPrint&IrisClassification|Result{% endblock %}
+
+
+{% block content %}
+
+  <style>
+
+h2{font-size:30px;
+color:black;
+}
+
+  </style>
+
+          <div class="row">
+                  <div class="col">
+                       <div class="form-group">
+                        <h5 class="control-label col-sm-8"> Original FingerPrint:</h5>
+                       </div>
+                       	{% if prediction %}
+                       <img src="{{original_fp_img}}" height="120px" width="250px">
+	                    {% endif %}
+                  </div>
+
+                <div class="col">
+                    <br><br>
+                   {% if prediction %}
+                    <h5>FingerPrint Matching Score</h5>
+                   <h2>{{prediction[0]}}</h2>
+                   {% endif %}
+                 </div>
+
+              <div class="col">
+                 <div class="form-group">
+               <h5 class="control-label col-sm-6" > Test FingerPrint:</h5>
+                </div>
+                    	{% if prediction %}
+                       <img src="{{input_fp}}" height="120px" width="250px">
+	                    {% endif %}
+              </div>
+       </div>
+    <br> <hr>
+         <div class="row">
+               <div class="col">
+                    <div class="form-group">
+                    <h5 class="control-label col-sm-6" > Original Iris:</h5>
+                   </div>
+
+                     	{% if prediction %}
+                       <img src="{{original_iris_img}}" height="120px" width="250px">
+
+	                    {% endif %}
+               </div>
+              <div class="col"><br><br>
+                 {% if prediction %}
+                  <h5>Iris Matching Score</h5>
+                 <h2>{{prediction[1]}}</h2>
+                 {% endif %}
+              </div>
+              <div class="col">
+                 <div class="form-group">
+                <h5 class="control-label col-sm-6" > Test Iris:</h5>
+                </div>
+
+                   	{% if prediction %}
+                       <img src="{{input_iris}}" height="120px" width="250px">
+	                    {% endif %}
+              </div>
+       </div>
+      <div class="row">
+          <br><div class="col"></div>
+      <center>
+                            {% if prediction %}
+                            <h2>Average Matching Score:{{prediction[2]}}</h2><br>
+                            <h2>Result:{{prediction[3]}}</h2>
+                            <h2>{{msg3}}</h2>
+                            {% endif %}
+
+      </center>
+
+      </div>
+
+<!--      <center>-->
+<!--        <div class="form-group">-->
+<!--             <div class="col-sm-offset-5 col-sm-5">-->
+<!--                 <button class="btn-success back"><a href="\home">BACK</a></button>-->
+<!--            </div>-->
+<!--            </div>-->
+<!--      </center>-->
+
+
+
+
+{% endblock %}
+
+
+
+
